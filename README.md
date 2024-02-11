@@ -42,12 +42,12 @@ This project utilizes a Cloudflare Worker deployed with Hono.js to implement a s
 
 To utilize the email tracking functionality, you'll need to embed a 1x1 pixel image in the emails you wish to track.
 
-1. **Generate Pixel URL**: Construct the URL for the tracking pixel, which will look something like this: `https://your-worker.your-subdomain.workers.dev/track/pixel`. Make sure to replace `your-worker.your-subdomain.workers.dev` with the actual URL of your deployed Cloudflare Worker.
+1. **Generate Pixel URL**: Construct the URL for the tracking pixel, which will look something like this: `https://your-worker.your-subdomain.workers.dev/track/pixel/vitim@email.com?type=.jpeg`. Make sure to replace `your-worker.your-subdomain.workers.dev` with the actual URL of your deployed Cloudflare Worker.
 
 2. **Insert the Pixel in Your Emails**: Embed the tracking pixel in the HTML body of your email as follows:
 
    ```html
-   <img src="https://your-worker.your-subdomain.workers.dev/track/pixel" width="1" height="1" style="display:none;" alt="Tracking Pixel">
+   <img src="https://your-worker.your-subdomain.workers.dev/track/pixel/vitim@email.com?type=.jpeg" width="1" height="1" style="display:none;" alt="Tracking Pixel">
    ```
 
    Ensure the pixel is invisible to the email recipient by using `style="display:none;"`.

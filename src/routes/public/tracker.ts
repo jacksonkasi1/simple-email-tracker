@@ -47,11 +47,6 @@ trackerApi.get("/1x1-pixel/:email_id", async (c) => {
     "hex",
   );
 
-
-  c.header('Access-Control-Allow-Origin', '*');
-  c.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  c.header('Access-Control-Allow-Headers', '*');
-
   const imageUrl =
     "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg";
 
@@ -64,7 +59,6 @@ trackerApi.get("/1x1-pixel/:email_id", async (c) => {
   return new Response(gifArray, {
     headers: {
       "Content-Type": "image/jpeg",
-      "Access-Control-Allow-Origin": "*",
     },
   });
 });
