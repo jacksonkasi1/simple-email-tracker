@@ -52,8 +52,11 @@ trackerApi.get("/1x1-pixel/:email_id", async (c) => {
 
   const imageBuffer = await fetchImageToBuffer(c, imageUrl);
 
+  console.log({email_id});
+  
+
   // Convert Buffer to Uint8Array, since Cloudflare Workers do not support Buffer directly
-  const gifArray = new Uint8Array(imageBuffer);
+  const gifArray = new Uint8Array(gif1x1);
 
   c.header("Content-Type", "image/jpeg");
   return new Response(gifArray, {
